@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.houtai.chengyu.mapper.ChengyuMapper">
+    
+    <resultMap type="Chengyu" id="ChengyuResult">
+        <result property="chengyuId"    column="chengyu_id"    />
+        <result property="chengyuquanzi"    column="chengyuquanzi"    />
+        <result property="chengyuquanpin"    column="chengyuquanpin"    />
+        <result property="levelId"    column="level_id"    />
+        <result property="hanziA"    column="hanzi_a"    />
+        <result property="aPinyin"    column="a_pinyin"    />
+        <result property="aShengdiao"    column="a_shengdiao"    />
+        <result property="hanziB"    column="hanzi_b"    />
+        <result property="bPinyin"    column="b_pinyin"    />
+        <result property="bShengdiao"    column="b_shengdiao"    />
+        <result property="hanziC"    column="hanzi_c"    />
+        <result property="cPinyin"    column="c_pinyin"    />
+        <result property="cShengdiao"    column="c_shengdiao"    />
+        <result property="hanziD"    column="hanzi_d"    />
+        <result property="dPinyin"    column="d_pinyin"    />
+        <result property="dShengdiao"    column="d_shengdiao"    />
+        <result property="hanziE"    column="hanzi_e"    />
+        <result property="ePinyin"    column="e_pinyin"    />
+        <result property="eShengdiao"    column="e_shengdiao"    />
+        <result property="hanziF"    column="hanzi_f"    />
+        <result property="fPinyin"    column="f_pinyin"    />
+        <result property="fShengdiao"    column="f_shengdiao"    />
+        <result property="hanziG"    column="hanzi_g"    />
+        <result property="gPinyin"    column="g_pinyin"    />
+        <result property="gShengdiao"    column="g_shengdiao"    />
+        <result property="hanziH"    column="hanzi_h"    />
+        <result property="hPinyin"    column="h_pinyin"    />
+        <result property="hShengdiao"    column="h_shengdiao"    />
+        <result property="hanziI"    column="hanzi_i"    />
+        <result property="iPinyin"    column="i_pinyin"    />
+        <result property="iShengdiao"    column="i_shengdiao"    />
+        <result property="hanziJ"    column="hanzi_j"    />
+        <result property="jPinyin"    column="j_pinyin"    />
+        <result property="jShengdiao"    column="j_shengdiao"    />
+        <result property="hanziK"    column="hanzi_k"    />
+        <result property="kPinyin"    column="k_pinyin"    />
+        <result property="kShengdiao"    column="k_shengdiao"    />
+        <result property="hanziL"    column="hanzi_l"    />
+        <result property="lPinyin"    column="l_pinyin"    />
+        <result property="lShengdiao"    column="l_shengdiao"    />
+    </resultMap>
+	
+	<sql id="selectChengyuVo">
+        select chengyu_id, chengyuquanzi, chengyuquanpin, level_id, hanzi_a, a_pinyin, a_shengdiao, hanzi_b, b_pinyin, b_shengdiao, hanzi_c, c_pinyin, c_shengdiao, hanzi_d, d_pinyin, d_shengdiao, hanzi_e, e_pinyin, e_shengdiao, hanzi_f, f_pinyin, f_shengdiao, hanzi_g, g_pinyin, g_shengdiao, hanzi_h, h_pinyin, h_shengdiao, hanzi_i, i_pinyin, i_shengdiao, hanzi_j, j_pinyin, j_shengdiao, hanzi_k, k_pinyin, k_shengdiao, hanzi_l, l_pinyin, l_shengdiao from com_chengyu
+    </sql>
+	
+    <select id="selectChengyuList" parameterType="Chengyu" resultMap="ChengyuResult">
+        <include refid="selectChengyuVo"/>
+        <where>  
+            <if test="chengyuId != null "> and chengyu_id = #{chengyuId}</if>
+             <if test="chengyuquanzi != null  and chengyuquanzi != '' "> and chengyuquanzi like concat('%',#{chengyuquanzi},'%') </if>
+             <if test="chengyuquanpin != null  and chengyuquanpin != '' "> and chengyuquanpin like concat('%',#{chengyuquanpin},'%')  </if>
+             <if test="levelId != null "> and level_id = #{levelId}</if>
+             <if test="hanziA != null  and hanziA != '' "> and hanzi_a = #{hanziA}</if>
+             <if test="aPinyin != null  and aPinyin != '' "> and binary   a_pinyin  like concat('%',#{aPinyin},'%') </if>
+             <if test="aShengdiao != null "> and a_shengdiao = #{aShengdiao}</if>
+             <if test="hanziB != null  and hanziB != '' "> and hanzi_b = #{hanziB}</if>
+             <if test="bPinyin != null  and bPinyin != '' "> and b_pinyin = #{bPinyin}</if>
+             <if test="bShengdiao != null "> and b_shengdiao = #{bShengdiao}</if>
+             <if test="hanziC != null  and hanziC != '' "> and hanzi_c = #{hanziC}</if>
+             <if test="cPinyin != null  and cPinyin != '' "> and c_pinyin = #{cPinyin}</if>
+             <if test="cShengdiao != null "> and c_shengdiao = #{cShengdiao}</if>
+             <if test="hanziD != null  and hanziD != '' "> and hanzi_d = #{hanziD}</if>
+             <if test="dPinyin != null  and dPinyin != '' "> and d_pinyin = #{dPinyin}</if>
+             <if test="dShengdiao != null "> and d_shengdiao = #{dShengdiao}</if>
+             <if test="hanziE != null  and hanziE != '' "> and hanzi_e = #{hanziE}</if>
+             <if test="ePinyin != null  and ePinyin != '' "> and e_pinyin = #{ePinyin}</if>
+             <if test="eShengdiao != null "> and e_shengdiao = #{eShengdiao}</if>
+             <if test="hanziF != null  and hanziF != '' "> and hanzi_f = #{hanziF}</if>
+             <if test="fPinyin != null  and fPinyin != '' "> and f_pinyin = #{fPinyin}</if>
+             <if test="fShengdiao != null "> and f_shengdiao = #{fShengdiao}</if>
+             <if test="hanziG != null  and hanziG != '' "> and hanzi_g = #{hanziG}</if>
+             <if test="gPinyin != null  and gPinyin != '' "> and g_pinyin = #{gPinyin}</if>
+             <if test="gShengdiao != null "> and g_shengdiao = #{gShengdiao}</if>
+             <if test="hanziH != null  and hanziH != '' "> and hanzi_h = #{hanziH}</if>
+             <if test="hPinyin != null  and hPinyin != '' "> and h_pinyin = #{hPinyin}</if>
+             <if test="hShengdiao != null "> and h_shengdiao = #{hShengdiao}</if>
+             <if test="hanziI != null  and hanziI != '' "> and hanzi_i = #{hanziI}</if>
+             <if test="iPinyin != null  and iPinyin != '' "> and i_pinyin = #{iPinyin}</if>
+             <if test="iShengdiao != null "> and i_shengdiao = #{iShengdiao}</if>
+             <if test="hanziJ != null  and hanziJ != '' "> and hanzi_j = #{hanziJ}</if>
+             <if test="jPinyin != null  and jPinyin != '' "> and j_pinyin = #{jPinyin}</if>
+             <if test="jShengdiao != null "> and j_shengdiao = #{jShengdiao}</if>
+             <if test="hanziK != null  and hanziK != '' "> and hanzi_k = #{hanziK}</if>
+             <if test="kPinyin != null  and kPinyin != '' "> and k_pinyin = #{kPinyin}</if>
+             <if test="kShengdiao != null "> and k_shengdiao = #{kShengdiao}</if>
+             <if test="hanziL != null  and hanziL != '' "> and hanzi_l = #{hanziL}</if>
+             <if test="lPinyin != null  and lPinyin != '' "> and l_pinyin = #{lPinyin}</if>
+             <if test="lShengdiao != null "> and l_shengdiao = #{lShengdiao}</if>
+         </where>
+    </select>
+    
+    <select id="selectChengyuById" parameterType="Integer" resultMap="ChengyuResult">
+        <include refid="selectChengyuVo"/>
+        where chengyu_id = #{chengyuId}
+    </select>
+        
+    <insert id="insertChengyu" parameterType="Chengyu" useGeneratedKeys="true" keyProperty="chengyuId">
+        insert into com_chengyu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="chengyuquanzi != null  and chengyuquanzi != ''  ">chengyuquanzi,</if>
+			<if test="chengyuquanpin != null  and chengyuquanpin != ''  ">chengyuquanpin,</if>
+			<if test="levelId != null  ">level_id,</if>
+			<if test="hanziA != null  and hanziA != ''  ">hanzi_a,</if>
+			<if test="aPinyin != null  and aPinyin != ''  ">a_pinyin,</if>
+			<if test="aShengdiao != null  ">a_shengdiao,</if>
+			<if test="hanziB != null  and hanziB != ''  ">hanzi_b,</if>
+			<if test="bPinyin != null  and bPinyin != ''  ">b_pinyin,</if>
+			<if test="bShengdiao != null  ">b_shengdiao,</if>
+			<if test="hanziC != null  and hanziC != ''  ">hanzi_c,</if>
+			<if test="cPinyin != null  and cPinyin != ''  ">c_pinyin,</if>
+			<if test="cShengdiao != null  ">c_shengdiao,</if>
+			<if test="hanziD != null  and hanziD != ''  ">hanzi_d,</if>
+			<if test="dPinyin != null  and dPinyin != ''  ">d_pinyin,</if>
+			<if test="dShengdiao != null  ">d_shengdiao,</if>
+			<if test="hanziE != null  and hanziE != ''  ">hanzi_e,</if>
+			<if test="ePinyin != null  and ePinyin != ''  ">e_pinyin,</if>
+			<if test="eShengdiao != null  ">e_shengdiao,</if>
+			<if test="hanziF != null  and hanziF != ''  ">hanzi_f,</if>
+			<if test="fPinyin != null  and fPinyin != ''  ">f_pinyin,</if>
+			<if test="fShengdiao != null  ">f_shengdiao,</if>
+			<if test="hanziG != null  and hanziG != ''  ">hanzi_g,</if>
+			<if test="gPinyin != null  and gPinyin != ''  ">g_pinyin,</if>
+			<if test="gShengdiao != null  ">g_shengdiao,</if>
+			<if test="hanziH != null  and hanziH != ''  ">hanzi_h,</if>
+			<if test="hPinyin != null  and hPinyin != ''  ">h_pinyin,</if>
+			<if test="hShengdiao != null  ">h_shengdiao,</if>
+			<if test="hanziI != null  and hanziI != ''  ">hanzi_i,</if>
+			<if test="iPinyin != null  and iPinyin != ''  ">i_pinyin,</if>
+			<if test="iShengdiao != null  ">i_shengdiao,</if>
+			<if test="hanziJ != null  and hanziJ != ''  ">hanzi_j,</if>
+			<if test="jPinyin != null  and jPinyin != ''  ">j_pinyin,</if>
+			<if test="jShengdiao != null  ">j_shengdiao,</if>
+			<if test="hanziK != null  and hanziK != ''  ">hanzi_k,</if>
+			<if test="kPinyin != null  and kPinyin != ''  ">k_pinyin,</if>
+			<if test="kShengdiao != null  ">k_shengdiao,</if>
+			<if test="hanziL != null  and hanziL != ''  ">hanzi_l,</if>
+			<if test="lPinyin != null  and lPinyin != ''  ">l_pinyin,</if>
+			<if test="lShengdiao != null  ">l_shengdiao,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="chengyuquanzi != null  and chengyuquanzi != ''  ">#{chengyuquanzi},</if>
+			<if test="chengyuquanpin != null  and chengyuquanpin != ''  ">#{chengyuquanpin},</if>
+			<if test="levelId != null  ">#{levelId},</if>
+			<if test="hanziA != null  and hanziA != ''  ">#{hanziA},</if>
+			<if test="aPinyin != null  and aPinyin != ''  ">#{aPinyin},</if>
+			<if test="aShengdiao != null  ">#{aShengdiao},</if>
+			<if test="hanziB != null  and hanziB != ''  ">#{hanziB},</if>
+			<if test="bPinyin != null  and bPinyin != ''  ">#{bPinyin},</if>
+			<if test="bShengdiao != null  ">#{bShengdiao},</if>
+			<if test="hanziC != null  and hanziC != ''  ">#{hanziC},</if>
+			<if test="cPinyin != null  and cPinyin != ''  ">#{cPinyin},</if>
+			<if test="cShengdiao != null  ">#{cShengdiao},</if>
+			<if test="hanziD != null  and hanziD != ''  ">#{hanziD},</if>
+			<if test="dPinyin != null  and dPinyin != ''  ">#{dPinyin},</if>
+			<if test="dShengdiao != null  ">#{dShengdiao},</if>
+			<if test="hanziE != null  and hanziE != ''  ">#{hanziE},</if>
+			<if test="ePinyin != null  and ePinyin != ''  ">#{ePinyin},</if>
+			<if test="eShengdiao != null  ">#{eShengdiao},</if>
+			<if test="hanziF != null  and hanziF != ''  ">#{hanziF},</if>
+			<if test="fPinyin != null  and fPinyin != ''  ">#{fPinyin},</if>
+			<if test="fShengdiao != null  ">#{fShengdiao},</if>
+			<if test="hanziG != null  and hanziG != ''  ">#{hanziG},</if>
+			<if test="gPinyin != null  and gPinyin != ''  ">#{gPinyin},</if>
+			<if test="gShengdiao != null  ">#{gShengdiao},</if>
+			<if test="hanziH != null  and hanziH != ''  ">#{hanziH},</if>
+			<if test="hPinyin != null  and hPinyin != ''  ">#{hPinyin},</if>
+			<if test="hShengdiao != null  ">#{hShengdiao},</if>
+			<if test="hanziI != null  and hanziI != ''  ">#{hanziI},</if>
+			<if test="iPinyin != null  and iPinyin != ''  ">#{iPinyin},</if>
+			<if test="iShengdiao != null  ">#{iShengdiao},</if>
+			<if test="hanziJ != null  and hanziJ != ''  ">#{hanziJ},</if>
+			<if test="jPinyin != null  and jPinyin != ''  ">#{jPinyin},</if>
+			<if test="jShengdiao != null  ">#{jShengdiao},</if>
+			<if test="hanziK != null  and hanziK != ''  ">#{hanziK},</if>
+			<if test="kPinyin != null  and kPinyin != ''  ">#{kPinyin},</if>
+			<if test="kShengdiao != null  ">#{kShengdiao},</if>
+			<if test="hanziL != null  and hanziL != ''  ">#{hanziL},</if>
+			<if test="lPinyin != null  and lPinyin != ''  ">#{lPinyin},</if>
+			<if test="lShengdiao != null  ">#{lShengdiao},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateChengyu" parameterType="Chengyu">
+        update com_chengyu
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="chengyuquanzi != null  and chengyuquanzi != ''  ">chengyuquanzi = #{chengyuquanzi},</if>
+            <if test="chengyuquanpin != null  and chengyuquanpin != ''  ">chengyuquanpin = #{chengyuquanpin},</if>
+            <if test="levelId != null  ">level_id = #{levelId},</if>
+            <if test="hanziA != null  and hanziA != ''  ">hanzi_a = #{hanziA},</if>
+            <if test="aPinyin != null  and aPinyin != ''  ">a_pinyin = #{aPinyin},</if>
+            <if test="aShengdiao != null  ">a_shengdiao = #{aShengdiao},</if>
+            <if test="hanziB != null  and hanziB != ''  ">hanzi_b = #{hanziB},</if>
+            <if test="bPinyin != null  and bPinyin != ''  ">b_pinyin = #{bPinyin},</if>
+            <if test="bShengdiao != null  ">b_shengdiao = #{bShengdiao},</if>
+            <if test="hanziC != null  and hanziC != ''  ">hanzi_c = #{hanziC},</if>
+            <if test="cPinyin != null  and cPinyin != ''  ">c_pinyin = #{cPinyin},</if>
+            <if test="cShengdiao != null  ">c_shengdiao = #{cShengdiao},</if>
+            <if test="hanziD != null  and hanziD != ''  ">hanzi_d = #{hanziD},</if>
+            <if test="dPinyin != null  and dPinyin != ''  ">d_pinyin = #{dPinyin},</if>
+            <if test="dShengdiao != null  ">d_shengdiao = #{dShengdiao},</if>
+            <if test="hanziE != null  and hanziE != ''  ">hanzi_e = #{hanziE},</if>
+            <if test="ePinyin != null  and ePinyin != ''  ">e_pinyin = #{ePinyin},</if>
+            <if test="eShengdiao != null  ">e_shengdiao = #{eShengdiao},</if>
+            <if test="hanziF != null  and hanziF != ''  ">hanzi_f = #{hanziF},</if>
+            <if test="fPinyin != null  and fPinyin != ''  ">f_pinyin = #{fPinyin},</if>
+            <if test="fShengdiao != null  ">f_shengdiao = #{fShengdiao},</if>
+            <if test="hanziG != null  and hanziG != ''  ">hanzi_g = #{hanziG},</if>
+            <if test="gPinyin != null  and gPinyin != ''  ">g_pinyin = #{gPinyin},</if>
+            <if test="gShengdiao != null  ">g_shengdiao = #{gShengdiao},</if>
+            <if test="hanziH != null  and hanziH != ''  ">hanzi_h = #{hanziH},</if>
+            <if test="hPinyin != null  and hPinyin != ''  ">h_pinyin = #{hPinyin},</if>
+            <if test="hShengdiao != null  ">h_shengdiao = #{hShengdiao},</if>
+            <if test="hanziI != null  and hanziI != ''  ">hanzi_i = #{hanziI},</if>
+            <if test="iPinyin != null  and iPinyin != ''  ">i_pinyin = #{iPinyin},</if>
+            <if test="iShengdiao != null  ">i_shengdiao = #{iShengdiao},</if>
+            <if test="hanziJ != null  and hanziJ != ''  ">hanzi_j = #{hanziJ},</if>
+            <if test="jPinyin != null  and jPinyin != ''  ">j_pinyin = #{jPinyin},</if>
+            <if test="jShengdiao != null  ">j_shengdiao = #{jShengdiao},</if>
+            <if test="hanziK != null  and hanziK != ''  ">hanzi_k = #{hanziK},</if>
+            <if test="kPinyin != null  and kPinyin != ''  ">k_pinyin = #{kPinyin},</if>
+            <if test="kShengdiao != null  ">k_shengdiao = #{kShengdiao},</if>
+            <if test="hanziL != null  and hanziL != ''  ">hanzi_l = #{hanziL},</if>
+            <if test="lPinyin != null  and lPinyin != ''  ">l_pinyin = #{lPinyin},</if>
+            <if test="lShengdiao != null  ">l_shengdiao = #{lShengdiao},</if>
+        </trim>
+        where chengyu_id = #{chengyuId}
+    </update>
+
+	<delete id="deleteChengyuById" parameterType="Integer">
+        delete from com_chengyu where chengyu_id = #{chengyuId}
+    </delete>
+	
+    <delete id="deleteChengyuByIds" parameterType="String">
+        delete from com_chengyu where chengyu_id in 
+        <foreach item="chengyuId" collection="array" open="(" separator="," close=")">
+            #{chengyuId}
+        </foreach>
+    </delete>
+    
+</mapper>

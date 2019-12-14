@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改成语')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-chengyu-edit" th:object="${chengyu}">
+            <input id="chengyuId" name="chengyuId" th:field="*{chengyuId}"  type="hidden">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">成语全字：</label>
+				<div class="col-sm-8">
+					<input id="chengyuquanzi" name="chengyuquanzi" th:field="*{chengyuquanzi}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">全拼：</label>
+				<div class="col-sm-8">
+					<input id="chengyuquanpin" name="chengyuquanpin" th:field="*{chengyuquanpin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">1是常用2中级3高级4不常用：</label>
+				<div class="col-sm-8">
+					<input id="levelId" name="levelId" th:field="*{levelId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">第一个汉字：</label>
+				<div class="col-sm-8">
+					<input id="hanziA" name="hanziA" th:field="*{hanziA}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">第一个：</label>
+				<div class="col-sm-8">
+					<input id="aPinyin" name="aPinyin" th:field="*{aPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">第一个：</label>
+				<div class="col-sm-8">
+					<input id="aShengdiao" name="aShengdiao" th:field="*{aShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">二位：</label>
+				<div class="col-sm-8">
+					<input id="hanziB" name="hanziB" th:field="*{hanziB}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">二位：</label>
+				<div class="col-sm-8">
+					<input id="bPinyin" name="bPinyin" th:field="*{bPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">二位：</label>
+				<div class="col-sm-8">
+					<input id="bShengdiao" name="bShengdiao" th:field="*{bShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">三位：</label>
+				<div class="col-sm-8">
+					<input id="hanziC" name="hanziC" th:field="*{hanziC}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">三位：</label>
+				<div class="col-sm-8">
+					<input id="cPinyin" name="cPinyin" th:field="*{cPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">三位：</label>
+				<div class="col-sm-8">
+					<input id="cShengdiao" name="cShengdiao" th:field="*{cShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">四位：</label>
+				<div class="col-sm-8">
+					<input id="hanziD" name="hanziD" th:field="*{hanziD}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">四位：</label>
+				<div class="col-sm-8">
+					<input id="dPinyin" name="dPinyin" th:field="*{dPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">四位：</label>
+				<div class="col-sm-8">
+					<input id="dShengdiao" name="dShengdiao" th:field="*{dShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">五位：</label>
+				<div class="col-sm-8">
+					<input id="hanziE" name="hanziE" th:field="*{hanziE}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">五位：</label>
+				<div class="col-sm-8">
+					<input id="ePinyin" name="ePinyin" th:field="*{ePinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">五位：</label>
+				<div class="col-sm-8">
+					<input id="eShengdiao" name="eShengdiao" th:field="*{eShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">六位：</label>
+				<div class="col-sm-8">
+					<input id="hanziF" name="hanziF" th:field="*{hanziF}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">六位：</label>
+				<div class="col-sm-8">
+					<input id="fPinyin" name="fPinyin" th:field="*{fPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">六位：</label>
+				<div class="col-sm-8">
+					<input id="fShengdiao" name="fShengdiao" th:field="*{fShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">七位：</label>
+				<div class="col-sm-8">
+					<input id="hanziG" name="hanziG" th:field="*{hanziG}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">七位：</label>
+				<div class="col-sm-8">
+					<input id="gPinyin" name="gPinyin" th:field="*{gPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">七位：</label>
+				<div class="col-sm-8">
+					<input id="gShengdiao" name="gShengdiao" th:field="*{gShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">八位：</label>
+				<div class="col-sm-8">
+					<input id="hanziH" name="hanziH" th:field="*{hanziH}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">八位：</label>
+				<div class="col-sm-8">
+					<input id="hPinyin" name="hPinyin" th:field="*{hPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">八位：</label>
+				<div class="col-sm-8">
+					<input id="hShengdiao" name="hShengdiao" th:field="*{hShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">九位：</label>
+				<div class="col-sm-8">
+					<input id="hanziI" name="hanziI" th:field="*{hanziI}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">九位：</label>
+				<div class="col-sm-8">
+					<input id="iPinyin" name="iPinyin" th:field="*{iPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">九位：</label>
+				<div class="col-sm-8">
+					<input id="iShengdiao" name="iShengdiao" th:field="*{iShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十位：</label>
+				<div class="col-sm-8">
+					<input id="hanziJ" name="hanziJ" th:field="*{hanziJ}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十位：</label>
+				<div class="col-sm-8">
+					<input id="jPinyin" name="jPinyin" th:field="*{jPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十位：</label>
+				<div class="col-sm-8">
+					<input id="jShengdiao" name="jShengdiao" th:field="*{jShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十一位：</label>
+				<div class="col-sm-8">
+					<input id="hanziK" name="hanziK" th:field="*{hanziK}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十一位：</label>
+				<div class="col-sm-8">
+					<input id="kPinyin" name="kPinyin" th:field="*{kPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十一位：</label>
+				<div class="col-sm-8">
+					<input id="kShengdiao" name="kShengdiao" th:field="*{kShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十二位：</label>
+				<div class="col-sm-8">
+					<input id="hanziL" name="hanziL" th:field="*{hanziL}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十二位：</label>
+				<div class="col-sm-8">
+					<input id="lPinyin" name="lPinyin" th:field="*{lPinyin}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">十二位：</label>
+				<div class="col-sm-8">
+					<input id="lShengdiao" name="lShengdiao" th:field="*{lShengdiao}" class="form-control" type="text">
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "houtai/chengyu";
+		$("#form-chengyu-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			},
+			focusCleanup: true
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-chengyu-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>
